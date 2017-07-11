@@ -1,28 +1,26 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMEHelper", "IMEHelper\IMEHelper.csproj", "{2B148D9D-0A2A-4D42-B5EB-1434C4DEACA6}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMEHelper-Monogame", "IMEHelper\IMEHelper-Monogame.csproj", "{6939E543-86FD-4148-8B30-F47803B2A541}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMEHelperTest", "IMEHelperTest\IMEHelperTest\IMEHelperTest.csproj", "{4B215350-43BB-4FAF-9EA7-7FAAB19E1840}"
-EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "IMEHelperTestContent", "IMEHelperTest\IMEHelperTestContent\IMEHelperTestContent.contentproj", "{CAE7B7FE-725D-4CC7-9D74-0A516BA59AAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMEHelperTest-Monogame", "IMEHelperTest\IMEHelperTest\IMEHelperTest-Monogame.csproj", "{0FDF6B09-E62E-485E-9039-D6C01CD83886}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x86 = Debug|x86
-		Release|x86 = Release|x86
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2B148D9D-0A2A-4D42-B5EB-1434C4DEACA6}.Debug|x86.ActiveCfg = Debug|x86
-		{2B148D9D-0A2A-4D42-B5EB-1434C4DEACA6}.Debug|x86.Build.0 = Debug|x86
-		{2B148D9D-0A2A-4D42-B5EB-1434C4DEACA6}.Release|x86.ActiveCfg = Release|x86
-		{2B148D9D-0A2A-4D42-B5EB-1434C4DEACA6}.Release|x86.Build.0 = Release|x86
-		{4B215350-43BB-4FAF-9EA7-7FAAB19E1840}.Debug|x86.ActiveCfg = Debug|x86
-		{4B215350-43BB-4FAF-9EA7-7FAAB19E1840}.Debug|x86.Build.0 = Debug|x86
-		{4B215350-43BB-4FAF-9EA7-7FAAB19E1840}.Release|x86.ActiveCfg = Release|x86
-		{4B215350-43BB-4FAF-9EA7-7FAAB19E1840}.Release|x86.Build.0 = Release|x86
-		{CAE7B7FE-725D-4CC7-9D74-0A516BA59AAB}.Debug|x86.ActiveCfg = Debug|x86
-		{CAE7B7FE-725D-4CC7-9D74-0A516BA59AAB}.Release|x86.ActiveCfg = Release|x86
+		{6939E543-86FD-4148-8B30-F47803B2A541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6939E543-86FD-4148-8B30-F47803B2A541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6939E543-86FD-4148-8B30-F47803B2A541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6939E543-86FD-4148-8B30-F47803B2A541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FDF6B09-E62E-485E-9039-D6C01CD83886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FDF6B09-E62E-485E-9039-D6C01CD83886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FDF6B09-E62E-485E-9039-D6C01CD83886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FDF6B09-E62E-485E-9039-D6C01CD83886}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

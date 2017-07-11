@@ -209,8 +209,9 @@ namespace JLChnToZ.IMEHelper {
             this._resreadclause = new IMMCompositionString(IMM.GCSResultReadClause);
             this._showIMEWin = showDefaultIMEWindow;
             AssignHandle(handle);
-            CharMessageFilter.AddFilter();
-            try {
+            //CharMessageFilter.AddFilter(); //it will cause WM_CHAR trigger twice.
+            try
+            {
                 this._sink = new TSF.TSFSink(showDefaultIMEWindow);
                 this._sink.onUpdate += onTSFUpdate;
                 this.hasTSFUpdate = false;

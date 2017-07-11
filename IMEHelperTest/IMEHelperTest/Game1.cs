@@ -4,7 +4,6 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
@@ -29,6 +28,8 @@ namespace IMEHelperTest {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             content = "";
+
+            handler = new IMEHandler(this, true);
         }
 
         /// <summary>
@@ -38,8 +39,7 @@ namespace IMEHelperTest {
         /// and initialize them as well.
         /// </summary>
         protected override void Initialize() {
-            handler = new IMEHandler(this);
-
+            
             handler.onResultReceived += (s, e) => {
                 switch ((int)e.result) {
                     case 8:
@@ -66,7 +66,9 @@ namespace IMEHelperTest {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            font1 = new UniFont(Content.Load<Texture2D>("glyph"));
+            //font1 = new UniFont(Content.Load<Texture2D>("glyph"));
+            using (var file = System.IO.File.OpenRead(Content.RootDirectory + "/glyph.png"))
+                font1 = new UniFont(Texture2D.FromStream(GraphicsDevice, file));
             font1.setSizes(System.IO.File.ReadAllBytes(Content.RootDirectory + "/glyphsize.bin")); // Load Glyph Sizes
             whitePixel = new Texture2D(GraphicsDevice, 1, 1);
             whitePixel.SetData<Color>(new Color[] { Color.White });

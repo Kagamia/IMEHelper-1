@@ -26,7 +26,7 @@ namespace JLChnToZ.IMEHelper {
         private IMENativeWindow _nativeWnd;
         
         /// <summary>
-        /// Constructor. Must be called in <see cref="Microsoft.Xna.Framework.Game.Initialize()"/> function.
+        /// Constructor. Must be called in <see cref="Microsoft.Xna.Framework.Game"/> constructor function.
         /// </summary>
         /// <param name="game">Game instance</param>
         /// <param name="showDefaultIMEWindow">Should display system IME windows.</param>
