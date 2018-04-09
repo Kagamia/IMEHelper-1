@@ -89,6 +89,8 @@ namespace JLChnToZ.IMEHelper {
         /// </summary>
         public bool IsEnabled { get; private set; }
 
+        public IntPtr IMEContext { get { return this._context; } }
+
         /// <summary>
         /// Composition String
         /// </summary>

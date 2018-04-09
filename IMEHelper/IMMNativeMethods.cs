@@ -21,7 +21,7 @@ using System.Text;
 
 namespace JLChnToZ.IMEHelper {
 
-    internal static class IMM {
+    public static class IMM {
         #region Constants
         public const int
             KeyDown = 0x0100,
@@ -40,7 +40,14 @@ namespace JLChnToZ.IMEHelper {
             GCSResultReadClause = 0x0400,
             GCSResultStr = 0x0800,
             GCSResultClause = 0x1000,
-            
+
+            CFSDefault = 0x0000,
+            CFSRect = 0x0001,
+            CFSPoint = 0x0002,
+            CFSForcePosition= 0x0020,
+            CFSCandidatePos = 0x0040,
+            CFSExclude = 0x0080,
+
             ImeStartCompostition = 0x010D,
             ImeEndComposition = 0x010E,
             ImeComposition = 0x010F,
@@ -71,6 +78,7 @@ namespace JLChnToZ.IMEHelper {
             ImnPrivate = 0x000E,
             
             InputLanguageChange = 0x0051;
+
         #endregion
 
         [DllImport("imm32.dll", SetLastError = true, EntryPoint = "ImmAssociateContext")]
@@ -85,6 +93,12 @@ namespace JLChnToZ.IMEHelper {
         [DllImport("imm32.dll", SetLastError = true, EntryPoint = "ImmGetContext")]
         public static extern IntPtr GetContext(IntPtr hWnd);
 
+        [DllImport("imm32.dll", EntryPoint = "ImmSetCompositionWindow")]
+        public static extern bool SetCompositionWindow(IntPtr hIMC, ref COMPOSITIONFORM compForm);
+
+        [DllImport("imm32.dll", EntryPoint = "ImmGetCompositionWindow")]
+        public static extern bool GetCompositionWindow(IntPtr hIMC, out COMPOSITIONFORM compForm);
+
         [DllImport("user32.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Auto)]
         public static extern bool TranslateMessage(IntPtr message);
 
@@ -98,6 +112,27 @@ namespace JLChnToZ.IMEHelper {
         public struct CandidateList {
             public uint Style, Selection, PageStart, PageSize;
             public string[] Candidates;
+        }
+
+        public struct COMPOSITIONFORM
+        {
+            public int dwStyle;
+            public POINT ptCurrentPos;
+            public RECT rcArea;
+        }
+
+        public struct POINT
+        {
+            public int x;
+            public int y;
+        }
+
+        public struct RECT
+        {
+            public int left;
+            public int top;
+            public int right;
+            public int bottom;
         }
 
         public static CandidateList GetCandidateList(IntPtr hIMC, uint index) {
